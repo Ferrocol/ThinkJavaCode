@@ -3,13 +3,13 @@ public class Exercise {
     public static void main(String[] args) {
         boolean flag1 = isHoopy(202);
         boolean flag2 = isFrabjuous(202);
-        System.out.println(flag1);
-        System.out.println(flag2);
+        System.out.println(flag1); // true
+        System.out.println(flag2); // true
         if (flag1 && flag2) {
-            System.out.println("ping!");
+            System.out.println("ping!"); // ping!
         }
         if (flag1 || flag2) {
-            System.out.println("pong!");
+            System.out.println("pong!"); // pong!
         }
     }
 
