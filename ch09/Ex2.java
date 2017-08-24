@@ -3,30 +3,29 @@ import java.util.Arrays;
 public class Ex2 {
 
     public static void main(String[] args) {
-        String myString = "This is a test string";
+        String myString = "I'm just a string, yes I'm only a string";
         letterHist(myString);
     }
 
-    public static void letterHist(String textString) {
-        System.out.println(textString.length());
-//        char[] alphabet = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-//                            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-        int[] histogram = createNewArray(alphabet.length);
+    public static int[] letterHist(String textString) {
         String upperCaseString = textString.toUpperCase();
-        System.out.println(upperCaseString);
-        for (int i = 0; i < textString.length(); i++) {
-            char currentCharacter = textString.charAt(i);
-            int index = alphabet.indexOf(currentCharacter);
-            System.out.println(index);
-//            histogram(index) += 1;
-//            return histogram;
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        int[] histogram = createEmptyArray(alphabet.length());
+
+        for (int i = 0; i < upperCaseString.length(); i++) {
+            char stringCharacter = upperCaseString.charAt(i);
+            int whichLetterOfTheAlphabet = alphabet.indexOf(stringCharacter);
+            if (whichLetterOfTheAlphabet >= 0) {
+                histogram[whichLetterOfTheAlphabet] += 1;
+            }
         }
 //        System.out.println(Arrays.toString(histogram));
+        return histogram;
     }
 
-    public static int[] createNewArray(int size) {
-        int[] array = new int[size];
-        return array;
+    public static int[] createEmptyArray(int size) {
+        int[] emptyArray = new int[size];
+        return emptyArray;
     }
 
 }
