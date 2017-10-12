@@ -1,12 +1,12 @@
 import java.util.Arrays;
 
-public class Ex5 {
+public class sieveOfEratosthenes {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
     sieveOfEratosthenes(100);
-  }
+    }
 
-  public static boolean[] sieveOfEratosthenes(int limit) {
+    public static boolean[] sieveOfEratosthenes(int limit) {
     int[] numbers = makeIntArray(limit);
     boolean[] primes = makeBooleanArray(limit);
     System.out.println("Prime numbers up to " + limit + " :");
@@ -22,20 +22,20 @@ public class Ex5 {
       System.out.println(primes[i]);
     }
     return primes;
-  }
+    }
 
-  public static int[] makeIntArray(int size) {
+    public static int[] makeIntArray(int size) {
     int[] array = new int[size];
     for (int i = 0; i < array.length; i++) {
       array[i] = i + 1;
     }
     return array;
-  }
+    }
 
-  public static boolean[] makeBooleanArray(int size) {
+    public static boolean[] makeBooleanArray(int size) {
     boolean[] array = new boolean[size];
     Arrays.fill(array, true);
     return array;
-  }
+    }
 
 }
